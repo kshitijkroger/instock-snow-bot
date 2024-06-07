@@ -67,6 +67,10 @@ adapter.onTurnError = onTurnErrorHandler;
 // Create the main dialog.
 const myBot = new EchoBot();
 
+server.get('/status', async(req, res) => {
+    res.send('Application is up')
+})
+
 // Listen for incoming requests.
 server.post('/api/messages', async (req, res) => {
     // Route received a request to adapter for processing
