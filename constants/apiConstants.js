@@ -14,7 +14,7 @@ async function GET_INCIDENT_DETAILS(incidentNumber) {
         return err
     })
 
-    return response;
+    return JSON.stringify(response);
 }
 
 async function TEST_APPLICATION() {
@@ -28,7 +28,7 @@ async function TEST_APPLICATION() {
             }
         });
         console.log('API Response:', response.data);
-        return response.data;
+        return JSON.stringify(response.data);
     } catch (error) {
         console.error('Error calling API:', error.message);
 
