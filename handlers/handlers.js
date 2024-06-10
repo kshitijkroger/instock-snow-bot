@@ -7,7 +7,9 @@ async function handleIncidentSelection(context) {
 }
 
 async function handleIncidentNumber(context, incidentNumber) {
-    await context.sendActivity('User provided ' + incidentNumber.toUpperCase());
+
+    const incidentDetail = await GET_INCIDENT_DETAILS(incidentNumber);
+    await context.sendActivity('User provided ' + incidentDetail);
 }
 
 // Function to handle the "Problem" selection
