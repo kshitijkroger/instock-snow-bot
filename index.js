@@ -70,13 +70,7 @@ const myBot = new EchoBot();
 server.get('/status', async(req, res) => {
     res.send({
         statusCode: 200,
-        statusMsg: "Application is Up!",
-        appStatus:{
-            MicrosoftAppId: process.env.MicrosoftAppId,
-            MicrosoftAppPassword: process.env.MicrosoftAppPassword,
-            MicrosoftAppType: process.env.MicrosoftAppType,
-            MicrosoftAppTenantId: process.env.MicrosoftAppTenantId
-        }
+        statusMsg: "Application is Up!"
     })
 })
 
