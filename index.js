@@ -68,7 +68,16 @@ adapter.onTurnError = onTurnErrorHandler;
 const myBot = new EchoBot();
 
 server.get('/status', async(req, res) => {
-    res.send('Application is up')
+    res.send({
+        statusCode: 200,
+        statusMsg: "Application is Up!",
+        appStatus:{
+            MicrosoftAppId: process.env.MicrosoftAppId,
+            MicrosoftAppPassword: process.env.MicrosoftAppPassword,
+            MicrosoftAppType: process.env.MicrosoftAppType,
+            MicrosoftAppTenantId: process.env.MicrosoftAppTenantId
+        }
+    })
 })
 
 // Listen for incoming requests.
