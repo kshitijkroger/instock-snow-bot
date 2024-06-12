@@ -1,5 +1,5 @@
 const { ActivityHandler, MessageFactory } = require('botbuilder');
-const { handleOtherInput, handleIncidentSelection, handleProblemSelection, handleKnowledgeDocumentSelection, handleIncidentNumber } = require('./handlers/handlers');
+const { handleOtherInput, handleIncidentSelection, handleProblemSelection, handleKnowledgeDocumentSelection, handleIncidentNumber, handleNewUserFacingIssue } = require('./handlers/handlers');
 const { showMainMenu } = require('./utils/MainMenu');
 
 class EchoBot extends ActivityHandler {
@@ -62,6 +62,11 @@ function getCommandHandlers() {
             keyword: 'knowledge document',
             condition: (text) => text.toLowerCase().includes('knowledge document'),
             action: handleKnowledgeDocumentSelection
+        },
+        {
+            keyword: 'other issue',
+            condition: (text) => text.toLowerCase().includes('other issue'),
+            action: handleNewUserFacingIssue
         }
     ];
 }
